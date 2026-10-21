@@ -1,0 +1,60 @@
+/* 11-pratik */
+/* günlük çalışma: adım listesi defter satırları gibi */
+#gunluk-plan .gp-sayfa { padding: 14px 16px 10px; display: flex; flex-direction: column; gap: 10px; min-height: 0; overflow: auto; }
+#gunluk-plan .gp-liste { list-style: none; margin: 0; padding: 0; }
+#gunluk-plan .gp-adim {
+  position: relative; display: grid; grid-template-columns: 28px 1fr auto auto; align-items: center; gap: 4px 12px;
+  padding: 9px 4px 10px; border-bottom: 1px solid var(--porte-2);
+}
+#gunluk-plan .gp-no { font: 800 0.9rem var(--f-mono); color: var(--muted); text-align: center; }
+#gunluk-plan .gp-govde { display: flex; flex-direction: column; min-width: 0; }
+#gunluk-plan .gp-govde b { color: var(--ink); }
+#gunluk-plan .gp-ne { font-size: 0.82rem; color: var(--muted); }
+#gunluk-plan .gp-dk { font-size: 0.84rem; color: var(--ink-2); }
+#gunluk-plan .gp-git { text-decoration: none; }
+#gunluk-plan .gp-bar { position: absolute; left: 0; bottom: -1px; height: 3px; width: 0; background: var(--tam); border-radius: 2px; transition: width 0.3s; }
+#gunluk-plan .gp-adim.simdi { background: color-mix(in srgb, var(--fosfor) 32%, transparent); }
+#gunluk-plan .gp-adim.simdi .gp-no { color: var(--ink); }
+#gunluk-plan .gp-adim.bitti .gp-govde b { text-decoration: line-through; text-decoration-color: var(--tam); text-decoration-thickness: 2px; }
+#gunluk-plan .gp-adim.bitti .gp-no { color: var(--tam); }
+
+/* kendini kaydet */
+#kaydet select.kd-sec {
+  font: 700 0.84rem var(--f-body); color: var(--ink); background: transparent;
+  border: 1.5px solid var(--line-2); border-radius: 999px; padding: 0.28em 0.8em; max-width: 100%;
+}
+#kaydet .kd-gizlilik { display: flex; gap: 8px; align-items: flex-start; margin: 0; font-size: 0.82rem; color: var(--ink-2); border-left: 2px solid var(--porte); padding: 3px 10px; }
+#kaydet .kd-gizlilik svg { width: 15px; height: 15px; flex: none; margin-top: 2px; color: var(--muted); }
+#kaydet .kd-alt { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 22px; flex: none; }
+#kaydet .kd-bas { margin: 0 0 2px; font-size: 0.82rem; color: var(--muted); font-weight: 700; }
+#kaydet .kd-eski .kayit-satir b { font-family: var(--f-mono); font-size: 0.8rem; }
+#kaydet .sheet.egri-kap { min-height: 220px; }
+
+/* ilerleme: defter sayfasında grafik bölümleri (kart değil, porte çizgileriyle ayrılmış) */
+#ilerleme .il-sayfa {
+  flex: 1; min-height: 0; overflow: auto; padding: 6px 14px 12px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); column-gap: 22px; align-content: start;
+}
+#ilerleme .il-bolum { padding: 10px 0 8px; border-bottom: 1px solid var(--porte-2); min-width: 0; }
+#ilerleme .il-bolum h4 { margin: 0 0 2px; font-size: 0.9rem; color: var(--ink); }
+#ilerleme .il-satir { margin: 0 0 4px; font-size: 0.8rem; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+#ilerleme .il-cv { position: relative; height: 92px; }
+#ilerleme .il-cv canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#ilerleme .il-bos { margin: 2px 0 0; font-size: 0.82rem; color: var(--muted); }
+#ilerleme .il-bos a { color: var(--ink); font-weight: 700; text-decoration-color: var(--pes); text-underline-offset: 3px; }
+#ilerleme .il-onay { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font-size: 0.86rem; color: var(--ink); border-left: 2px solid var(--kirmizi); padding: 6px 12px; }
+#ilerleme .il-onay[hidden] { display: none; }
+
+/* kapanış */
+#kapanis .kp-sayfa { padding: 16px 18px; display: flex; flex-direction: column; gap: 14px; }
+#kapanis .kp-bas { margin: 0; font-family: var(--f-display); font-variation-settings: "wdth" 78; font-weight: 760; font-size: 1.3rem; color: var(--ink); }
+#kapanis .kp-git { display: flex; flex-wrap: wrap; gap: 8px; }
+#kapanis .stage { justify-content: safe center; }
+
+@media (max-width: 860px) {
+  #kaydet .kd-alt { grid-template-columns: 1fr; }
+  #gunluk-plan .gp-adim { grid-template-columns: 24px 1fr auto; }
+  #gunluk-plan .gp-git { grid-column: 2 / -1; justify-self: start; }
+  #ilerleme .il-sayfa { overflow: visible; }
+}
+#ilerleme .il-bos a { white-space: nowrap; }

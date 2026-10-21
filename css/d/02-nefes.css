@@ -1,0 +1,61 @@
+/* 02-nefes: nefes, uzun "sss", uzun ses, duruş */
+
+/* --- nefes: stilize gövde + akciğer hacmi grafiği --- */
+#nefes .nefes-sayfa { flex: 1; min-height: 0; display: flex; flex-direction: column; padding: 10px 12px 8px; }
+#nefes .nefes-svg-kap { flex: 1; min-height: 220px; position: relative; }
+#nefes .nefes-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+#nefes .nefes-etiket { font-family: var(--f-body); font-size: 15px; font-weight: 700; }
+#nefes .nefes-etiket.kucuk { font-size: 12.5px; font-weight: 600; }
+#nefes .nefes-graf { height: 150px; flex: none; position: relative; border-top: 1px solid var(--line); margin-top: 6px; }
+#nefes .nefes-graf canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#nefes .nefes-durum { min-height: 3.2em; margin: 0; }
+
+/* --- sss: gürlük şeridi, sonuç, günlük en iyi --- */
+#sss .sss-serit { flex: 1; min-height: 190px; position: relative; }
+#sss .sss-serit canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#sss .sss-buyuk { position: absolute; left: 52px; top: 8px; pointer-events: none; background: color-mix(in srgb, var(--kagit) 85%, transparent); padding: 4px 8px; border-radius: 4px; }
+#sss .sss-buyuk b { display: block; font-family: var(--f-display); font-weight: 800; font-variation-settings: "wdth" 66; font-size: clamp(1.8rem, 3vw, 2.8rem); line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; }
+#sss .sss-buyuk small { display: block; font-size: 0.8rem; font-weight: 700; color: var(--muted); margin-top: 4px; }
+#sss .sss-gecmis { flex: none; padding: 8px 12px 6px; }
+#sss .sss-gecmis-bas { display: flex; gap: 10px; align-items: baseline; font-size: 0.82rem; color: var(--muted); }
+#sss .sss-gecmis-bas b { color: var(--ink); font-size: 0.9rem; }
+#sss .sss-gecmis-cv { position: relative; height: 128px; }
+#sss .sss-gecmis-cv canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#sss .sss-bos { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; font-size: 0.86rem; color: var(--muted); text-align: center; }
+
+/* --- uzun ses --- */
+#uzun-ses .us-tablo { width: 100%; max-width: 560px; }
+#uzun-ses .us-tablo td:first-child { font-weight: 700; color: var(--ink); }
+
+/* --- duruş --- */
+#durus .durus-sayfa { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(200px, 1fr) minmax(220px, 0.9fr); gap: 8px 20px; padding: 12px 16px; }
+#durus .durus-svg-kap { position: relative; min-height: 300px; }
+#durus .durus-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+#durus .durus-not { font-family: var(--f-body); font-size: 12px; font-weight: 600; }
+#durus .durus-nokta { cursor: pointer; outline: none; }
+#durus .durus-nokta:focus-visible path { stroke-width: 3.4; }
+#durus .durus-yan { display: flex; flex-direction: column; gap: 14px; align-self: center; }
+#durus .durus-liste { display: flex; flex-direction: column; gap: 6px; }
+#durus .durus-madde {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 10px; text-align: left; cursor: pointer;
+  font: inherit; font-size: 0.92rem; font-weight: 700; color: var(--ink);
+  background: transparent; border: 0; border-bottom: 1px solid var(--line); padding: 6px 2px;
+}
+#durus .durus-madde .d-durum { font-size: 0.78rem; font-weight: 700; color: var(--kirmizi); }
+#durus .durus-madde.duzeldi .d-durum { color: var(--tam); }
+#durus .durus-madde.duzeldi .d-ad { text-decoration: line-through; text-decoration-color: var(--tam); text-decoration-thickness: 1.5px; color: var(--ink-2); }
+#durus .durus-madde.secili { background: color-mix(in srgb, var(--fosfor) 35%, transparent); }
+#durus .durus-madde:hover { background: color-mix(in srgb, var(--ink) 6%, transparent); }
+#durus .durus-bilgi { font-size: 0.9rem; color: var(--ink-2); border-left: 2px solid var(--porte); padding: 4px 12px; min-height: 7.5em; }
+#durus .durus-bilgi b { color: var(--ink); display: block; margin-bottom: 4px; }
+#durus .durus-bilgi p { margin: 0; }
+
+@media (max-width: 860px) {
+  #nefes .nefes-svg-kap { flex: none; height: 330px; }
+  #nefes .nefes-graf { height: 140px; }
+  #sss .sss-serit { flex: none; height: 230px; }
+  #durus .durus-sayfa { grid-template-columns: 1fr; }
+  #durus .durus-svg-kap { height: 440px; min-height: 0; }
+  #durus .durus-bilgi { min-height: 0; }
+}
+#sss .kulaklik-not { display: none; }

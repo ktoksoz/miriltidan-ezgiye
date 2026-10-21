@@ -1,0 +1,77 @@
+/* 1. Ses nasıl çıkar? */
+
+/* --- Ses aygıtı: stilize kesit + parça listesi --- */
+#ses-aygiti .sa-sayfa {
+  flex: 1; min-height: 0;
+  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(220px, 1fr); gap: 10px 22px;
+  padding: 14px 18px 14px 40px;
+}
+#ses-aygiti .sa-cizim-kap { min-height: 0; display: flex; align-items: center; justify-content: center; }
+#ses-aygiti svg.sa-cizim { width: 100%; height: 100%; max-height: 100%; display: block; overflow: visible; }
+#ses-aygiti .kontur { fill: none; stroke: var(--ink); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+#ses-aygiti .kontur.ince { stroke: var(--grafit); stroke-width: 1.2; opacity: 0.75; }
+#ses-aygiti .kontur.ic { stroke-width: 1.3; }
+#ses-aygiti .parca { cursor: pointer; outline: none; }
+#ses-aygiti .parca .dolgu { fill: transparent; stroke: none; transition: fill 0.2s; }
+#ses-aygiti .parca:hover .dolgu, #ses-aygiti .parca:focus-visible .dolgu { fill: color-mix(in srgb, var(--porte) 35%, transparent); }
+#ses-aygiti .parca.sec .dolgu { fill: color-mix(in srgb, var(--fosfor) 62%, transparent); }
+#ses-aygiti .parca:focus-visible .kontur { stroke: var(--focus); }
+#ses-aygiti .tel { fill: var(--kagit-2); stroke: var(--ink); stroke-width: 1.3; stroke-linejoin: round; }
+#ses-aygiti .etiket { font: 600 13px var(--f-body); fill: var(--muted); cursor: pointer; }
+#ses-aygiti .etiket.sec { fill: var(--ink); font-weight: 800; }
+#ses-aygiti .kilavuz { fill: none; stroke: var(--grafit); stroke-width: 0.8; opacity: 0.55; }
+#ses-aygiti .hava { fill: var(--pes); opacity: 0; }
+#ses-aygiti .hava.ses { fill: var(--ink); }
+#ses-aygiti .dalga { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; opacity: 0; }
+
+#ses-aygiti .sa-bilgi { display: flex; flex-direction: column; gap: 14px; min-height: 0; overflow: auto; padding: 4px 0; }
+#ses-aygiti .sa-kart { border-left: 2px solid var(--porte); padding: 2px 0 2px 14px; min-height: 9.5em; }
+#ses-aygiti .sa-ad { font-family: var(--f-display); font-variation-settings: "wdth" 80; font-weight: 740; font-size: 1.45rem; margin: 0 0 4px; }
+#ses-aygiti .sa-rol { display: inline-block; font-size: 0.78rem; font-weight: 700; color: var(--muted); margin-bottom: 6px; }
+#ses-aygiti .sa-rol:empty { display: none; }
+#ses-aygiti .sa-metin { margin: 0; font-size: 0.92rem; color: var(--ink-2); line-height: 1.5; }
+#ses-aygiti .sa-roller { display: flex; flex-direction: column; gap: 10px; }
+#ses-aygiti .sa-rol-satir { display: flex; flex-direction: column; gap: 5px; }
+#ses-aygiti .sa-rol-ad {
+  align-self: flex-start; border: 0; background: none; padding: 0 0.15em; cursor: pointer;
+  font-family: var(--f-display); font-variation-settings: "wdth" 85; font-weight: 720; font-size: 1rem; color: var(--ink);
+}
+#ses-aygiti .sa-rol-satir.on .sa-rol-ad { background: linear-gradient(transparent 22%, color-mix(in srgb, var(--fosfor) 75%, transparent) 22% 88%, transparent 88%); }
+:root[data-theme="dark"] #ses-aygiti .sa-rol-satir.on .sa-rol-ad { color: #1c2340; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) #ses-aygiti .sa-rol-satir.on .sa-rol-ad { color: #1c2340; } }
+#ses-aygiti .sa-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* --- Ses telleri --- */
+#ses-telleri .st-sayfa { flex: 1; min-height: 320px; display: flex; }
+#ses-telleri .st-sayfa .fill { flex: 1; }
+#ses-telleri .controls .sl input[type="range"] { width: 170px; }
+
+/* --- Kaynak ve filtre --- */
+#kaynak-filtre .kf-sayfa { flex: 1; min-height: 340px; display: flex; }
+#kaynak-filtre .kf-sayfa .fill { flex: 1; }
+#kaynak-filtre .seg button { min-width: 2.1em; }
+
+/* --- Formantlar --- */
+#formantlar .fh-sayfa { flex: 1; min-height: 320px; display: flex; }
+#formantlar .fh-sayfa .fill { flex: 1; }
+#formantlar canvas.fh-harita { touch-action: none; cursor: crosshair; }
+#formantlar .fh-not[hidden] { display: none; }
+
+/* --- Şarkıcı formantı --- */
+#sarkici-formanti .sf-sayfa { flex: 1; min-height: 360px; display: flex; flex-direction: column; padding: 8px 6px 4px; }
+#sarkici-formanti .sf-sp { position: relative; flex: 1; min-height: 190px; display: flex; }
+#sarkici-formanti .sf-sp .spektrogram { flex: 1; }
+#sarkici-formanti .sf-imlec { position: absolute; top: 0; bottom: 14px; left: 0; width: 1.5px; background: var(--pes); opacity: 0.8; pointer-events: none; z-index: 2; }
+#sarkici-formanti .sf-ltas { position: relative; height: 150px; flex: none; border-top: 1px solid var(--line); margin-top: 4px; }
+#sarkici-formanti .sf-ltas canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+@media (max-width: 860px) {
+  #ses-aygiti .sa-sayfa { grid-template-columns: 1fr; padding: 12px 12px 14px 34px; }
+  #ses-aygiti svg.sa-cizim { height: 400px; }
+  #ses-aygiti .sa-kart { min-height: 0; }
+  #ses-telleri .st-sayfa { flex: none; height: 460px; }
+  #kaynak-filtre .kf-sayfa { flex: none; height: 440px; }
+  #formantlar .fh-sayfa { flex: none; height: 400px; }
+  #sarkici-formanti .sf-sayfa { flex: none; height: 440px; }
+  #ses-telleri .controls .sl input[type="range"] { width: 130px; }
+}

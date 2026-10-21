@@ -1,0 +1,33 @@
+/* 5. Ses aralığı ve ses türleri */
+
+/* ses aralığı ölçer */
+#ses-araligi .stage { gap: 10px; }
+#ses-araligi .egri-kap { min-height: 200px; }
+#ses-araligi .gam-satir { gap: 6px 10px; }
+#ses-araligi .aralik-sonuc { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+#ses-araligi .aralik-sonuc .spacer { flex: 1; }
+#ses-araligi .olcum.kayitli b { font-size: 1.25rem; color: var(--ink-2); }
+#ses-araligi .aralik-alt { font-size: 0.84rem; gap: 6px 10px; }
+#ses-araligi .aralik-yonerge { margin: 0; }
+
+/* ses türleri */
+#ses-turleri .tur-dugmeler { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
+#ses-turleri .turler-sayfa { flex: none; height: clamp(330px, 54vh, 470px); }
+#ses-turleri .turler-sayfa canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#ses-turleri .ortusme p { margin: 0 0 6px; color: var(--ink-2); font-size: 0.95rem; }
+#ses-turleri .ortusme p.kaynak { font-size: 0.82rem; color: var(--muted); }
+#ses-turleri .ortusme b { color: var(--ink); }
+
+/* tessitura */
+#tessitura .stage { gap: 10px; }
+#tessitura .tes-egri { min-height: 170px; }
+#tessitura .tes-hist { height: 210px; flex: none; }
+#tessitura .tes-hist canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#tessitura .tes-ornek { gap: 6px 10px; }
+
+@media (max-width: 860px) {
+  #ses-araligi .egri { height: 260px; }
+  #ses-turleri .turler-sayfa { height: 340px; flex: none; }
+  #tessitura .egri { height: 220px; min-height: 200px; }
+  #tessitura .tes-hist { height: 200px; }
+}

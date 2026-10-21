@@ -1,0 +1,46 @@
+/* 07-rezonans */
+#unlu-duzeltme .ud-sayfa { flex: 1; min-height: 360px; position: relative; }
+#unlu-duzeltme .ud-sayfa > canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+#parlak-koyu .pk-sl { gap: 6px 18px; }
+#parlak-koyu .pk-sl input[type="range"] { width: 120px; }
+#parlak-koyu .pk-sonagraf { flex: 1; min-height: 190px; display: flex; }
+#parlak-koyu .pk-alt { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 12px; flex: none; }
+#parlak-koyu .pk-harita { height: 170px; position: relative; }
+#parlak-koyu .pk-sag { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+#parlak-koyu .pk-ibre { height: 96px; position: relative; flex: none; }
+#parlak-koyu .pk-harita > canvas, #parlak-koyu .pk-ibre > canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#parlak-koyu .pk-sag .mic-satir { font-size: 0.8rem; }
+
+#nazalite .nz-sayfa { flex: 1; min-height: 320px; display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
+#nazalite .nz-cizim { position: relative; min-height: 0; padding: 6px; display: flex; align-items: center; justify-content: center; }
+#nazalite .nz-svg { width: 100%; height: 100%; max-height: 420px; color: var(--pes); }
+#nazalite .nz-grafik { position: relative; min-height: 240px; border-left: 1.5px solid color-mix(in srgb, var(--porte) 70%, transparent); }
+#nazalite .nz-grafik > canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#nazalite .nz-svg path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+#nazalite .nz-kafa { stroke: var(--ink); stroke-width: 2; }
+#nazalite .nz-burun { fill: color-mix(in srgb, var(--porte) 30%, transparent) !important; stroke: var(--porte); stroke-width: 1.5; }
+#nazalite .nz-damak { stroke: var(--ink); stroke-width: 3.5; }
+#nazalite .nz-duvar { stroke: var(--ink-2); stroke-width: 2; }
+#nazalite .nz-dil { stroke: var(--ink-2); stroke-width: 2.5; fill: color-mix(in srgb, var(--ink) 7%, transparent) !important; transition: d 0.3s; }
+#nazalite .nz-velum { stroke: var(--ink); stroke-width: 7; }
+#nazalite .nz-kucukdil { fill: var(--ink); }
+#nazalite .nz-agiz { fill: var(--ink); transition: opacity 0.2s; }
+#nazalite .nz-girtlak { stroke: var(--ink-2); stroke-width: 2; }
+#nazalite .nz-ok { stroke: var(--pes); stroke-width: 3; stroke-dasharray: 6 5; transition: opacity 0.25s; }
+#nazalite .nz-parmak ellipse { fill: var(--kagit-2); stroke: var(--ink); stroke-width: 1.8; }
+#nazalite .nz-x { stroke: var(--kirmizi); stroke-width: 3; }
+#nazalite .nz-svg text { font-family: var(--f-body); font-size: 11px; font-weight: 700; fill: var(--muted); }
+#nazalite .nz-svg text.nz-vurgu { fill: var(--ink); }
+@media (prefers-reduced-motion: reduce) { #nazalite .nz-dil, #nazalite .nz-ok, #nazalite .nz-agiz { transition: none; } }
+
+@media (max-width: 860px) {
+  #unlu-duzeltme .ud-sayfa { flex: none; height: 420px; }
+  #parlak-koyu .pk-sonagraf { flex: none; height: 220px; }
+  #parlak-koyu .pk-alt { grid-template-columns: 1fr; }
+  #nazalite .nz-sayfa { grid-template-columns: 1fr; flex: none; }
+  #nazalite .nz-cizim { height: 300px; }
+  #nazalite .nz-grafik { height: 260px; border-left: 0; border-top: 1.5px solid color-mix(in srgb, var(--porte) 70%, transparent); }
+}
+#nazalite .nz-cizgi { stroke: var(--muted); stroke-width: 1; }
+@media (max-width: 520px) { #nazalite .sl input[type="range"] { width: 120px; } }

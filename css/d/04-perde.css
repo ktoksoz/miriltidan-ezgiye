@@ -1,0 +1,50 @@
+/* 4. Doğru perdede söylemek */
+
+/* detone: kulak eşiği */
+#detone .detone-yanit { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+#detone .yanit { min-width: 7.2em; justify-content: center; font-size: 1.15rem; }
+#detone .yanit .ok { font-family: var(--f-mono); font-weight: 800; }
+#detone .yanit.dogru { background: var(--tam); border-color: var(--tam); color: #fff; }
+#detone .yanit.yanlis { background: var(--tiz); border-color: var(--tiz); color: #fff; }
+#detone .detone-soru { min-width: 13em; text-align: center; order: 0; }
+#detone .detone-sayfa { flex: 1; min-height: 220px; }
+#detone .detone-sayfa canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* aralıklar ve gam */
+#araliklar .aralik-sec { gap: 6px 10px; }
+#araliklar .aralik-bilgi { margin: 0; font-size: 0.9rem; color: var(--ink-2); }
+#araliklar .aralik-bilgi b { color: var(--ink); }
+#araliklar .nota-cipler { display: flex; flex-wrap: wrap; gap: 6px; }
+#araliklar .cip { font-family: var(--f-mono); font-weight: 700; font-size: 0.82rem; padding: 1px 9px; border-radius: 999px; border: 1.5px solid var(--line-2); color: var(--muted); }
+#araliklar .cip.tam { border-color: var(--tam); color: var(--tam); }
+#araliklar .cip.pes { border-color: var(--pes); color: var(--pes); }
+#araliklar .cip.tiz { border-color: var(--tiz); color: var(--tiz); }
+
+/* ezgi söyleme */
+#ezgi .stage { gap: 9px; }
+#ezgi .egri-kap { min-height: 220px; }
+#ezgi .ezgi-ayar .sl input { width: 120px; }
+#ezgi .ezgi-bilgi { margin: 0; line-height: 1.45; }
+#ezgi .ezgi-kayitlar { font-size: 0.86rem; }
+#ezgi .ezgi-kayitlar summary { cursor: pointer; font-weight: 700; color: var(--ink-2); }
+#ezgi .ezgi-kayitlar .note-msg { margin: 4px 0; }
+#ezgi .ezgi-kalici { display: flex; flex-direction: column; gap: 2px; margin-top: 4px; }
+#ezgi .ezgi-kalici p { margin: 0; }
+#ezgi .ezgi-gizlilik { margin: 6px 0 0; line-height: 1.4; }
+
+/* kulak oyunu */
+#kulak-oyunu .kulak-egri { min-height: 180px; }
+#kulak-oyunu .kulak-piyano { height: 118px; flex: none; }
+#kulak-oyunu .kulak-piyano canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#kulak-oyunu .kulak-piyano.tikla canvas { cursor: pointer; }
+#kulak-oyunu .kulak-secenek { display: flex; flex-wrap: wrap; gap: 6px 8px; }
+#kulak-oyunu .kulak-secenek .btn.dogru { background: var(--tam); border-color: var(--tam); color: #fff; opacity: 1; }
+#kulak-oyunu .kulak-secenek .btn.yanlis { background: var(--tiz); border-color: var(--tiz); color: #fff; opacity: 1; }
+
+@media (max-width: 860px) {
+  #detone .detone-sayfa { height: 260px; flex: none; }
+  #detone .yanit { min-width: 6em; }
+  #detone .detone-soru { order: -1; flex-basis: 100%; }
+  #kulak-oyunu .kulak-egri .egri { height: 220px; min-height: 200px; }
+  #ezgi .egri { height: 280px; }
+}

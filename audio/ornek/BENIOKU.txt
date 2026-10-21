@@ -1,0 +1,2 @@
+Bu klasör ileride eklenecek gerçek ses kayıtları içindir (ör. örnek şarkıcı kayıtları).
+Şu anda sitedeki bütün sesler tarayıcıda sentezlenir.

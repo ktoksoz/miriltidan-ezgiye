@@ -1,0 +1,22 @@
+/* Nota ↔ frekans ↔ sent dönüşümleri */
+const { eq } = require("./_t.js");
+const N = require("../js/notalar.js");
+eq("La4 = 440 Hz", N.mtof(69), 440, 1e-9);
+eq("Do4 = 261,63 Hz", N.mtof(60), 261.6256, 1e-3);
+eq("Mi2 = 82,41 Hz", N.mtof(N.parse("E2")), 82.4069, 1e-3);
+eq("Do6 = 1046,50 Hz", N.mtof(N.parse("Do6")), 1046.502, 1e-3);
+eq("440 Hz → MIDI 69", N.ftom(440), 69, 1e-9);
+eq("frekans → nota → frekans", N.mtof(N.ftom(317.3)), 317.3, 1e-9);
+eq("oktav = 1200 sent", N.cents(220, 440), 1200, 1e-9);
+eq("yarım ses = 100 sent", N.cents(N.mtof(60), N.mtof(61)), 100, 1e-9);
+eq("sent → oran: 1200 → 2", N.centsToRatio(1200), 2, 1e-12);
+eq("445 Hz: La4 +19,56 sent", N.nearest(445).cents, 19.56, 0.01);
+eq("435 Hz: La4'e en yakın", N.nearest(435).midi, 69);
+eq("ad(60) = Do4", N.ad(60), "Do4");
+eq("ad(61, harf) = C♯4", N.ad(61, { style: "harf" }), "C♯4");
+eq("ad(70) = Si♭4", N.ad(70), "Si♭4");
+eq("parse(Sol3) = 55", N.parse("Sol3"), 55);
+eq("parse(Bb2) = 46", N.parse("Bb2"), 46);
+eq("parse(Fa#5) = 78", N.parse("Fa#5"), 78);
+eq("ad(parse(x)) gidiş-dönüş", [36, 47, 59, 72, 84].map((m) => N.parse(N.ad(m).replace("♯", "#").replace("♭", "b"))), [36, 47, 59, 72, 84]);
+eq("aralık adı: 7 = tam beşli", N.aralikAdi(7), "tam beşli");

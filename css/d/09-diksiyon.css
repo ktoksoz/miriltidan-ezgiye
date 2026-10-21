@@ -1,0 +1,40 @@
+/* 09-diksiyon */
+#turkce-unluler .stage, #legato .stage, #nefes-yerleri .stage { gap: 10px; }
+#turkce-unluler .tu-sayfa { position: relative; flex: 1; min-height: 300px; max-height: 440px; }
+#turkce-unluler .tu-sayfa canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#turkce-unluler .tu-k { display: inline-block; width: 14px; height: 10px; border-radius: 1px; }
+#turkce-unluler .tu-k.unlu { background: color-mix(in srgb, var(--fosfor) 85%, transparent); }
+#turkce-unluler .tu-k.perdeli { background: color-mix(in srgb, var(--pes) 35%, transparent); }
+#turkce-unluler .tu-k.perdesiz { background: var(--grafit); }
+#turkce-unluler .tu-k.sus { border-top: 2px dashed var(--grafit); height: 0; }
+
+#legato .leg-kap { flex: 1; display: flex; flex-direction: column; min-height: 280px; overflow: hidden; }
+#legato .leg-egri { flex: 1; display: flex; min-height: 210px; }
+#legato .leg-serit { position: relative; height: 56px; border-top: 1px solid var(--line); }
+#legato .leg-serit canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+#nefes-yerleri .ny-kagit { padding: 14px 16px; }
+#nefes-yerleri .ny-soz { display: flex; flex-wrap: wrap; align-items: center; row-gap: 8px; font-family: var(--f-display); font-variation-settings: "wdth" 82; font-weight: 700; font-size: 1.35rem; color: var(--ink); }
+#nefes-yerleri .ny-par { display: inline-flex; align-items: center; white-space: nowrap; }
+#nefes-yerleri .ny-hece { padding: 0 1px; }
+#nefes-yerleri .ny-ara {
+  width: 22px; height: 34px; margin: 0 1px; border: 1.5px dashed var(--line-2); border-radius: 999px; background: transparent; cursor: pointer;
+  color: var(--ink); font: 800 1.5rem/1 var(--f-display); padding: 0; display: inline-grid; place-items: center;
+}
+#nefes-yerleri .ny-ara:hover { border-color: var(--ink); }
+#nefes-yerleri .ny-ara.on { border-style: solid; }
+#nefes-yerleri .ny-ara.on.tam { border-color: var(--tam); color: var(--tam); background: color-mix(in srgb, var(--tam) 10%, transparent); }
+#nefes-yerleri .ny-ara.on.pes { border-color: var(--pes); color: var(--pes); background: color-mix(in srgb, var(--pes) 10%, transparent); }
+#nefes-yerleri .ny-ara.on.tiz { border-color: var(--tiz); color: var(--tiz); background: color-mix(in srgb, var(--tiz) 10%, transparent); }
+#nefes-yerleri .ny-liste { display: flex; flex-direction: column; gap: 6px; }
+#nefes-yerleri .ny-ozet { display: flex; flex-wrap: wrap; gap: 6px; }
+#nefes-yerleri .ny-chip.tam { border-color: var(--tam); color: var(--tam); }
+#nefes-yerleri .ny-chip.pes { border-color: var(--pes); color: var(--pes); }
+#nefes-yerleri .ny-chip.tiz { border-color: var(--tiz); color: var(--tiz); }
+#nefes-yerleri .sheet.egri-kap { min-height: 220px; }
+@media (max-width: 860px) {
+  #nefes-yerleri .ny-soz { font-size: 1.15rem; }
+  #nefes-yerleri .ny-ara { width: 24px; height: 32px; }
+  #turkce-unluler .tu-sayfa { min-height: 340px; }
+  #legato .leg-egri { min-height: 300px; }
+}

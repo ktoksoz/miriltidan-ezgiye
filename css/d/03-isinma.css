@@ -1,0 +1,49 @@
+/* 03-isinma: pipet deneyi, ısınma rutini, ses sağlığı */
+
+/* --- neden ısınılır: pipet --- */
+#neden-isinma .pipet-sayfa { flex: 1; min-height: 280px; position: relative; }
+#neden-isinma .pipet-sayfa canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#neden-isinma .note-msg { margin: 0; min-height: 3.2em; }
+
+/* --- ısınma rutini --- */
+#isinma .isinma-govde { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(190px, 230px) 1fr; gap: 14px; }
+#isinma .isinma-yan { display: flex; flex-direction: column; gap: 10px; min-height: 0; }
+#isinma .isinma-baslik b { display: block; font-family: var(--f-display); font-weight: 800; font-variation-settings: "wdth" 66; font-size: clamp(2rem, 3.2vw, 2.8rem); line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; }
+#isinma .isinma-baslik small { display: block; font-size: 0.8rem; font-weight: 700; color: var(--muted); margin-top: 4px; line-height: 1.35; }
+#isinma .isinma-liste { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; overflow: auto; }
+#isinma .isinma-adim {
+  width: 100%; display: grid; grid-template-columns: 1.6em 1fr auto; align-items: baseline; gap: 6px; text-align: left; cursor: pointer;
+  font: inherit; font-size: 0.88rem; font-weight: 600; color: var(--ink-2);
+  background: transparent; border: 0; border-bottom: 1px solid var(--line); padding: 5px 4px;
+}
+#isinma .isinma-adim:hover { background: color-mix(in srgb, var(--ink) 6%, transparent); }
+#isinma .ia-no { font-family: var(--f-mono); font-size: 0.78rem; color: var(--muted); }
+#isinma .ia-sure { font-family: var(--f-mono); font-size: 0.8rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+#isinma .isinma-adim.simdi { background: color-mix(in srgb, var(--fosfor) 45%, transparent); color: var(--ink); font-weight: 800; }
+#isinma .isinma-adim.simdi .ia-sure { color: var(--ink); font-weight: 700; }
+#isinma .isinma-adim.bitti .ia-ad { text-decoration: line-through; text-decoration-color: var(--tam); text-decoration-thickness: 1.5px; }
+#isinma .isinma-adim.bitti .ia-sure { color: var(--tam); font-weight: 800; }
+#isinma .isinma-nasil { margin: 0; min-height: 3em; }
+
+/* --- ses sağlığı --- */
+#ses-sagligi .sg-dalga { height: 108px; flex: none; position: relative; }
+#ses-sagligi .sg-dalga canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#ses-sagligi .sg-liste { flex: 1; min-height: 0; overflow: auto; padding: 4px 16px; scrollbar-width: thin; }
+#ses-sagligi .sg-satir { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 14px; padding: 9px 0; border-bottom: 1px solid var(--line); }
+#ses-sagligi .sg-satir:last-child { border-bottom: 0; }
+#ses-sagligi .sg-iddia { margin: 0; font-weight: 700; color: var(--ink); flex: 1 1 18em; }
+#ses-sagligi .sg-no { font-family: var(--f-mono); font-size: 0.8rem; color: var(--muted); margin-right: 0.6em; }
+#ses-sagligi .sg-btn { display: flex; gap: 6px; flex: none; }
+#ses-sagligi .sg-yanit { flex-basis: 100%; font-size: 0.9rem; color: var(--ink-2); padding-left: 1.6em; }
+#ses-sagligi .sg-yanit p { margin: 0 0 4px; }
+#ses-sagligi .sg-hukum { font-weight: 800; }
+#ses-sagligi .sg-hukum small { font-weight: 600; color: var(--muted); font-size: 0.82rem; }
+#ses-sagligi .sg-hukum.dogru { color: var(--tam); }
+#ses-sagligi .sg-hukum.yanlis { color: var(--kirmizi); }
+
+@media (max-width: 860px) {
+  #neden-isinma .pipet-sayfa { flex: none; height: 320px; }
+  #isinma .isinma-govde { grid-template-columns: 1fr; }
+  #isinma .isinma-liste { overflow: visible; }
+  #ses-sagligi .sg-liste { overflow: visible; }
+}

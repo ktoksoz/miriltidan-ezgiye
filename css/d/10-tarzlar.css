@@ -1,0 +1,50 @@
+/* 10-tarzlar */
+/* ortak: seçim kutuları (makam, rast perdesi) */
+#makam-perdeleri select.mk-sec {
+  font: 700 0.84rem var(--f-body); color: var(--ink); background: transparent;
+  border: 1.5px solid var(--line-2); border-radius: 999px; padding: 0.28em 0.8em; max-width: 100%;
+}
+#makam-perdeleri select.mk-sec:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* bel canto: ağzın filtre yanıtı şeridi */
+#bel-canto .bc-spektrum { position: relative; height: 92px; flex: none; }
+#bel-canto .bc-spektrum canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* pop: mikrofon yanıtı sayfası */
+#pop .pop-mik { position: relative; height: 168px; flex: none; }
+#pop .pop-mik canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#pop .sheet.egri-kap { min-height: 200px; }
+#pop .egri { min-height: 190px; }
+
+/* makam perdeleri: halka + makam kartı */
+#makam-perdeleri .mk-ust { flex: none; display: grid; grid-template-columns: minmax(200px, 230px) 1fr; gap: 6px 16px; padding: 8px 14px 8px 8px; align-items: center; }
+#makam-perdeleri .mk-halka { position: relative; height: 216px; }
+#makam-perdeleri .mk-halka canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#makam-perdeleri .mk-kart { font-size: 0.84rem; color: var(--ink-2); min-width: 0; }
+#makam-perdeleri .mk-kart h4 { font-family: var(--f-display); font-variation-settings: "wdth" 78; font-weight: 760; font-size: 1.35rem; margin: 0 0 4px; color: var(--ink); }
+#makam-perdeleri .mk-kart h4 small { font-family: var(--f-body); font-size: 0.8rem; font-weight: 600; color: var(--muted); }
+#makam-perdeleri .mk-kart dl { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; margin: 0; }
+#makam-perdeleri .mk-kart dt { color: var(--muted); font-weight: 700; font-size: 0.78rem; padding-top: 1px; }
+#makam-perdeleri .mk-kart dd { margin: 0; color: var(--ink); }
+#makam-perdeleri .mk-not { margin: 6px 0 0; font-size: 0.8rem; color: var(--muted); }
+#makam-perdeleri .mk-rast { margin: 6px 0 0; padding-top: 6px; border-top: 1px solid var(--line); font-size: 0.82rem; }
+#makam-perdeleri .sheet.egri-kap { min-height: 210px; }
+#makam-perdeleri .egri { min-height: 200px; }
+
+/* usul: eğri ile vuruş şeridi aynı sayfada, alt alta */
+#usul .us-sayfa { flex-direction: column; }
+#usul .us-serit { position: relative; height: 46px; flex: none; border-top: 1px solid var(--line); }
+#usul .us-serit canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#usul .us-bilgi { font-size: 0.82rem; color: var(--muted); margin: 0; }
+
+@media (max-width: 1100px) {
+  #makam-perdeleri .mk-ust { grid-template-columns: 200px 1fr; }
+  #makam-perdeleri .mk-halka { height: 200px; }
+}
+@media (max-width: 860px) {
+  #makam-perdeleri .mk-ust { grid-template-columns: 1fr; padding: 8px; }
+  #makam-perdeleri .mk-halka { height: 260px; }
+  #makam-perdeleri .egri, #pop .egri { height: 280px; }
+  #usul .us-sayfa .egri { height: 280px; }
+  #pop .pop-mik { height: 180px; }
+}

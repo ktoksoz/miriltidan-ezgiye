@@ -1,0 +1,26 @@
+/* 06-bolgeler */
+#ses-bolgeleri .sb-sayfa { flex: 1; min-height: 320px; position: relative; }
+#ses-bolgeleri .sb-sayfa > canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#ses-bolgeleri .sb-alt { display: flex; flex-direction: column; gap: 6px; }
+
+#passaggio .sheet.egri-kap { min-height: 220px; }
+#passaggio .gurluk-serit, #kirilma .gurluk-serit { height: 64px; flex: none; position: relative; }
+#passaggio .gurluk-serit > canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#passaggio table.data { margin: 0.2rem 0 0.4rem; }
+
+#kirilma .kr-ikinci { font-size: 0.86rem; }
+#kirilma .kr-bolge-not { color: var(--muted); font-size: 0.8rem; }
+#kirilma .sheet.egri-kap { min-height: 220px; }
+#kirilma .kr-trend { height: 120px; flex: none; position: relative; }
+#kirilma .kr-trend > canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+#belting .bt-sayfa { flex: 1; min-height: 280px; position: relative; }
+#belting .bt-sayfa > canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+@media (max-width: 860px) {
+  #ses-bolgeleri .sb-sayfa { flex: none; height: 560px; }
+  #belting .bt-sayfa { flex: none; height: 320px; }
+  #passaggio .sheet.egri-kap, #kirilma .sheet.egri-kap { flex: none; }
+  #passaggio table.data { font-size: 0.8rem; }
+  #passaggio table.data td, #passaggio table.data th { padding: 3px 6px; }
+}

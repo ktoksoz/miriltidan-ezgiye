@@ -1,0 +1,18 @@
+/* 0. Giriş: kapak. Bütün sayfa bir nota defteri; alt yarıda kalemle çizilen perde eğrisi. */
+.cover {
+  background:
+    /* defterin kenar boşluğu çizgisi */
+    linear-gradient(90deg, transparent calc(var(--gutter) - 14px), color-mix(in srgb, var(--kirmizi) 55%, transparent) calc(var(--gutter) - 14px) calc(var(--gutter) - 12.5px), transparent calc(var(--gutter) - 12.5px)),
+    var(--bg);
+}
+.kapak-egri { position: absolute !important; left: var(--gutter); right: 0; bottom: 64px; top: 66%; min-height: 0 !important; }
+.cover h1 { font-weight: 800; }
+.cover h1 span:last-child { padding-left: 0.04em; }
+.kapak-mic { background: color-mix(in srgb, var(--bg) 85%, transparent); border-radius: 999px; padding: 4px 6px 4px 4px; }
+.kapak-mic .mic-satir { flex-wrap: nowrap; }
+.kapak-mic .kulaklik-not { display: none; }
+.kapak-mic .mic-hata { position: absolute; bottom: 100%; right: 0; max-width: 420px; background: var(--kagit-2); padding: 8px 12px; margin-bottom: 8px; }
+@media (max-width: 860px) {
+  .kapak-egri { top: auto; height: 170px; bottom: 120px; left: 0; }
+  .cover-bottom { flex-direction: column-reverse; align-items: flex-start; }
+}

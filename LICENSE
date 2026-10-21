@@ -1,0 +1,94 @@
+Mırıltıdan Ezgiye — https://egitim.koraytoksoz.com/san/
+Copyright (c) 2026 Koray Toksöz
+
+Bu proje iki ayrı lisansla dağıtılır:
+
+  1. KAYNAK KOD (MIT Lisansı)
+     js/, css/, tools/, test/ klasörlerindeki ve index.html içindeki kod.
+
+  2. İÇERİK (Creative Commons Atıf 4.0 Uluslararası, CC BY 4.0)
+     Slayt metinleri, açıklamalar, sunucu notları, sözlük tanımları,
+     bu site için yazılmış egzersiz ve ezgiler (js/data/ezgiler.js),
+     anlatım metinleri (tools/narration.json), anlatım sesleri (audio/)
+     ve kontrol listesi (docs/kontrol-listesi.md).
+
+Üçüncü taraf bileşenler aşağıda ayrıca belirtilmiştir.
+
+-------------------------------------------------------------------------------
+1. MIT Lisansı (kaynak kod)
+-------------------------------------------------------------------------------
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+-------------------------------------------------------------------------------
+2. Creative Commons Atıf 4.0 Uluslararası (içerik)
+-------------------------------------------------------------------------------
+
+İçeriği kopyalayabilir, dağıtabilir, çevirebilir, uyarlayabilir ve ticari
+amaçla dahil olmak üzere her amaçla kullanabilirsiniz. Şartlar:
+
+  - Atıf: "Koray Toksöz, Mırıltıdan Ezgiye (https://egitim.koraytoksoz.com/san/)"
+    şeklinde ad ve bağlantı verin.
+  - Lisansa bağlantı verin.
+  - Değişiklik yaptıysanız bunu belirtin.
+
+Lisans metninin tamamı:
+  https://creativecommons.org/licenses/by/4.0/legalcode.tr
+  https://creativecommons.org/licenses/by/4.0/legalcode
+
+-------------------------------------------------------------------------------
+3. Üçüncü taraf bileşenler
+-------------------------------------------------------------------------------
+
+Sesler:
+  Sitedeki bütün şarkıcı sesleri, referans notaları ve vurmalı sesler tarayıcıda
+  sentezlenir (kaynak–filtre modeli: Rosenberg glotis darbesi ve formant
+  rezonatörleri; Web Audio). Gerçek insan sesi kaydı kullanılmaz.
+  audio/ornek/ klasörü ileride eklenebilecek kayıtlar için boş bırakılmıştır.
+
+Türkçe ünlülerin formant değerleri (js/data/formantlar.js):
+  Erkek ve kadın değerleri: Malkoç, E. (2009). Türkçe ünlülerin akustik
+  özellikleri. Dil Dergisi 146: 71–85, Tablo 1 (ölçüm ortalamaları; olgu
+  verisi olarak alıntılanmıştır). Çocuk değerleri tahminidir (Hillenbrand ve
+  ark. 1995, JASA 97: 3099 oranlarıyla ölçeklendi).
+
+Türk müziği perde hesapları, makam ve usul verisi (js/koma.js, js/usul.js,
+js/data/makamlar.js, js/data/usuller.js):
+  Aynı yazarın "Nefesten Taksime" klarnet eğitiminden alınmıştır (MIT / CC BY 4.0).
+  Makam ve usul bilgilerinin kaynakları dosyaların başında yazılıdır
+  (TDV İslâm Ansiklopedisi, Arel–Ezgi–Uzdilek sistemi ve diğerleri).
+
+Anlatım sesleri (audio/):
+  ElevenLabs ücretli abonelikle "İrem" sesi kullanılarak üretilmiştir ve
+  yukarıdaki CC BY 4.0 kapsamında paylaşılmaktadır. Sesler, belirli bir
+  kişinin sesini taklit etmek ya da yanıltıcı amaçla kullanılamaz.
+
+Creative Commons simgeleri (img/cc-cc.svg, img/cc-by.svg):
+  Creative Commons, https://creativecommons.org/about/downloads/
+  CC simgeleri lisansları belirtmek amacıyla kullanılmaktadır.
+
+Yazı tipleri (Google Fonts üzerinden yüklenir, depoda bulunmaz):
+  Anybody, Atkinson Hyperlegible Next, Atkinson Hyperlegible Mono —
+  SIL Open Font License 1.1.
+
+Müzik örnekleri:
+  "Neşeye Övgü" teması (Ludwig van Beethoven, 9. Senfoni, 1824), "Frère
+  Jacques" (Fransız halk ezgisi, 18. yüzyıl) ve "Ah! vous dirai-je, maman"
+  (Fransız ezgisi, ilk basım 1761) kamu malıdır. Öteki ezgi ve egzersizler bu
+  site için yazılmıştır.

@@ -1,0 +1,14 @@
+/* 08-vibrato */
+#vibrato .stage, #duz-ses .stage, #susleme .stage { gap: 10px; }
+#vibrato .sheet.egri-kap, #duz-ses .sheet.egri-kap { min-height: 200px; }
+#vibrato .vib-alt, #duz-ses .vib-alt { display: grid; grid-template-columns: minmax(0, 1fr) minmax(170px, 230px); gap: 14px; align-items: stretch; }
+#vibrato .vib-duzlem, #duz-ses .vib-duzlem { position: relative; height: 230px; }
+#vibrato .vib-duzlem canvas, #duz-ses .vib-duzlem canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#vibrato .vib-olcum, #duz-ses .vib-olcum { display: flex; flex-direction: column; gap: 10px; justify-content: center; }
+#vibrato .vib-olcum .olcumler { flex-direction: column; gap: 6px; }
+#susleme .sheet.egri-kap { min-height: 260px; }
+@media (max-width: 860px) {
+  #vibrato .vib-alt, #duz-ses .vib-alt { grid-template-columns: 1fr; }
+  #vibrato .vib-olcum .olcumler { flex-direction: row; }
+  #vibrato .sheet.egri-kap, #duz-ses .sheet.egri-kap, #susleme .sheet.egri-kap { min-height: 240px; }
+}
